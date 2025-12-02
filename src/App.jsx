@@ -10,7 +10,7 @@ const initialFilms = [ { title: 'Inception', genre: 'Fantascienza' },
 function App() {
   const [search, setSearch] = useState('')
   const [films, setFilms] = useState(initialFilms);
-useEffect(() => { const newfilms = initialFilms.filter((film) => film.title.includes(search)); setFilms(newfilms); }, [search]);
+useEffect(() => { const newfilms = initialFilms.filter((film) => film.genre.includes(search)); setFilms(newfilms); }, [search]);
 
   return (
     <>
@@ -20,13 +20,14 @@ useEffect(() => { const newfilms = initialFilms.filter((film) => film.title.incl
       <main>
         <input type="search" 
         className='cerca'
-        placeholder='cerca film'
+        placeholder='seleziona tra uno di questi film'
         value={search}
         onChange={(event) => setSearch(event.target.value)}/>
         <ul>
           {films.map((film, index) => (
             <li key={index}>
               <strong>{film.title}</strong> - <em>{film.genre}</em>
+              <p>{film.index}10/10 IGN</p>
             </li>
           ))}
         </ul>
