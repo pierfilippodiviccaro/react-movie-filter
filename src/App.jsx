@@ -9,7 +9,7 @@ const initialFilms = [ { title: 'Inception', genre: 'Fantascienza' },
 function App() {
   const [search, setSearch] = useState('')
   const [films, setFilms] = useState(initialFilms);
-useEffect(() => { const newfilms = initialFilms.filter((film) => film.includes(search)); setFilms(newfilms); }, [search]);
+useEffect(() => { const newfilms = initialFilms.filter((film) => film.title.includes(search)); setFilms(newfilms); }, [search]);
 
   return (
     <>
