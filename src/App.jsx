@@ -5,7 +5,8 @@ const initialFilms = [ { title: 'Inception', genre: 'Fantascienza' },
   { title: 'Titanic', genre: 'Romantico' },
   { title: 'Batman', genre: 'Azione' },
   { title: 'Interstellar', genre: 'Fantascienza' },
-  { title: 'Pulp Fiction', genre: 'Thriller' },]
+  { title: 'Pulp Fiction', genre: 'Thriller' },
+{title:'Questo non è un paese per vecchi', genre:'giallo'}]
 function App() {
   const [search, setSearch] = useState('')
   const [films, setFilms] = useState(initialFilms);
@@ -13,11 +14,12 @@ useEffect(() => { const newfilms = initialFilms.filter((film) => film.title.incl
 
   return (
     <>
-      <header>
+      <header className='miao-consiglia'>
         <h1>i film consigliati dalla miao corporation</h1>
       </header>
       <main>
         <input type="search" 
+        className='cerca'
         placeholder='cerca film'
         value={search}
         onChange={(event) => setSearch(event.target.value)}/>
